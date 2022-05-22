@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"><head>
+    <!-- Basic Page Needs
+================================================== -->
+    <meta charset="utf-8">
+    <title>Objects</title>
+
+    <!-- Mobile Specific Metas
+  ================================================== -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Construction Html5 Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+
+    <!-- Favicon
+  ================================================== -->
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+
+    <!-- CSS
+  ================================================== -->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/plugins/bootstrap/bootstrap.min.css">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="/plugins/fontawesome/css/all.min.css">
+    <!-- Animation -->
+    <link rel="stylesheet" href="/plugins/animate-css/animate.css">
+    <!-- slick Carousel -->
+    <link rel="stylesheet" href="/plugins/slick/slick.css">
+    <link rel="stylesheet" href="/plugins/slick/slick-theme.css">
+    <!-- Colorbox -->
+    <link rel="stylesheet" href="/plugins/colorbox/colorbox.css">
+    <!-- Template styles-->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/bank-css.css">
+</head>
+<body>
+
+    <div class="body" id="bg-img4">
+        <header id="header" class="header-one">
+            <div class="site-navigation">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <nav class="navbar navbar-expand-lg navbar-dark p-0">
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+
+                                <div id="navbar-collapse" class="collapse navbar-collapse">
+                                    <div class="logo col-lg-3 text-center text-lg-left mb-3 mb-md-5 mb-lg-0">
+                                        <a class="d-block" href="index.html">
+                                            <img loading="lazy" src="/images/logo_tech2.png" alt="TechBuild">
+                                        </a>
+                                    </div>
+                                    <!-- logo end -->
+                                    <ul class="nav navbar-nav mr-auto">
+                                    </ul>
+                                </div>
+                                <!-- Button trigger modal -->
+                                <a href="/builder">
+                                    <button type="button" class="btn btn-outline-warning" style="font-size: 18px;border-radius: 15px;margin-right: 10px;">
+                                        Back
+                                    </button>
+                                </a>
+                            </nav>
+                        </div>
+                        <!--/ Col end -->
+                    </div>
+                    <!--/ Row end -->
+
+                </div>
+                <!--/ Container end -->
+
+            </div>
+            <!--/ Navigation end -->
+        </header>
+        <!--/ Header end -->
+    
+                  <!-- Button trigger modal -->
+    
+        <div id="cont" class="section">
+    
+            <div class="container" style="height: auto;width: 250%; margin-bottom: 60px;">
+                <div class="table-responsive" style="border-radius: 20px;">
+                    <div class="table-wrapper">
+                        <div class="table-title">
+                            <div class="row">
+                                <div class="col-sm-8"><h2>Objects <b>Details</b></h2></div>
+                                <div class="col-sm-4">
+                                    <div class="search-box">
+                                        <i class="fa fa-search" aria-hidden="true"></i>
+                                        <input type="text" class="form-control" placeholder="Search&hellip;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <table class="table table-striped table-hover table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Object id</th>
+                                    <th>Photo<i class="fa fa-sort"></i></th>
+                                    <th>Name</th>
+                                    <th>Address</th>
+                                    <th>Builder id<i class="fa fa-sort"></i></th>
+                                    <th>Builder name<i class="fa fa-sort"></i></th>
+                                    <th>Client id<i class="fa fa-sort"></i></th>
+                                    <th>Client name<i class="fa fa-sort"></i></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:each="o : ${objects}">
+                                    <td th:text="${o.getId()}"></td>
+                                    <td th:text="${o.getObject_id()}"></td>
+                                    <td ><img th:src="@{${o.getPhoto()}}" alt="" width="50px" height="50px"></td>
+                                    <td th:text="${o.getName()}"></td>
+                                    <td th:text="${o.getAddress()}"></td>
+                                    <td th:text="${o.getBuilder_id()}"></td>
+                                    <td th:text="${o.getBuilderFullName()}"></td>
+                                    <td th:text="${o.getClient_id()}"></td>
+                                    <td th:text="${o.getCLientFullName()}"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="clearfix">
+                            <ul class="pagination">
+                                <li class="page-item disabled"><a href="#"><i class="fa fa-angle-double-left"></i></a></li>
+                                <li class="page-item"><a href="#" class="page-link">1</a></li>
+                                <li class="page-item"><a href="#" class="page-link">2</a></li>
+                                <li class="page-item active"><a href="#" class="page-link">3</a></li>
+                                <li class="page-item"><a href="#" class="page-link">4</a></li>
+                                <li class="page-item"><a href="#" class="page-link">5</a></li>
+                                <li class="page-item"><a href="#" class="page-link"><i class="fa fa-angle-double-right"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>  
+            </div>  
+    
+        </div>
+
+        <footer id="footer" class="footer bg-overlay">
+            <div class="footer-main">
+                <div class="container">
+                    <div class="row justify-content-between">
+                        <div class="col-lg-4 col-md-6 footer-widget footer-about">
+                            <h3 class="widget-title">About Us</h3>
+                            <img loading="lazy" class="footer-logo" src="images/logo_tech2.png" alt="Constra">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inci done idunt ut
+                                labore et dolore magna aliqua.</p>
+                            <div class="footer-social">
+                                <ul>
+                                    <li><a href="https://www.facebook.com/profile.php?id=100022314692818&sk=photos" aria-label="Facebook"><i
+                                            class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="https://twitter.com/donny22110" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                                    </li>
+                                    <li><a href="https://instagram.com/donny_moslem" aria-label="Instagram"><i
+                                            class="fab fa-instagram"></i></a></li>
+                                    <li><a href="https://github.com/Donny-cap" aria-label="Github"><i class="fab fa-github"></i></a></li>
+                                </ul>
+                            </div><!-- Footer social end -->
+                        </div><!-- Col end -->
+
+                        <div class="col-lg-4 col-md-6 footer-widget mt-5 mt-md-0">
+                            <h3 class="widget-title">Working Hours</h3>
+                            <div class="working-hours">
+                                We work 7 days a week, every day excluding major holidays. Contact us if you have an emergency, with our
+                                Hotline and Contact form.
+                                <br><br> Monday - Friday: <span class="text-right">10:00 - 16:00 </span>
+                                <br> Saturday: <span class="text-right">12:00 - 15:00</span>
+                                <br> Sunday and holidays: <span class="text-right">09:00 - 12:00</span>
+                            </div>
+                        </div><!-- Col end -->
+
+                        <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 footer-widget">
+                            <h3 class="widget-title">Services</h3>
+                            <ul class="list-arrow">
+                                <li><a href="#">Pre-Construction</a></li>
+                                <li><a href="#">General Contracting</a></li>
+                                <li><a href="#">Construction Management</a></li>
+                                <li><a href="#">Design and Build</a></li>
+                                <li><a href="#">Self-Perform Construction</a></li>
+                            </ul>
+                        </div><!-- Col end -->
+                    </div><!-- Row end -->
+                </div><!-- Container end -->
+            </div><!-- Footer main end -->
+
+            <div class="copyright">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-12">
+                            <div class="copyright-info text-center">
+              <span>Copyright &copy; <script>
+                  document.write(new Date().getFullYear())
+                </script>, Designed &amp; Developed by <a href="#">Donny</a></span>
+                            </div>
+                        </div>
+
+                    </div><!-- Row end -->
+
+                    <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top position-fixed">
+                        <button class="btn btn-primary" title="Back to Top">
+                            <i class="fa fa-angle-double-up"></i>
+                        </button>
+                    </div>
+
+                </div><!-- Container end -->
+            </div><!-- Copyright end -->
+        </footer><!-- Footer end -->
+        <!-- Footer -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script src="/js/bootstrap.bundle.js"></script>
+</body>
+</html>
